@@ -1,7 +1,25 @@
 # smb-speed-on-mac
-a script that decrease samba protocol security to increase transfer speed
+A script that decrease samba protocol security to increase transfer speed.
 
-This document explains each line of the provided shell script and its impact on system configuration, particularly in the context of SMB (Server Message Block) settings on macOS.
+As you know, since the AFP protocol for macOS has been deprecated, the default network traffic is now SMB (Server Message Block) also known as Samba. 
+It is notably slower when transferring a large number of small files, which can be very frustrating in daily use. This script, which summarizes adjustments that have been in use for several years, highlights all the settings to modify for faster transfers.
+
+This document explains each line of the provided shell script and its impact on system configuration, particularly in the context of samba/SMB settings on macOS.
+
+## Download smb-speed-on-mac.sh script
+```bash
+git clone yokoinc/smb-speed-on-mac
+```
+
+## Then edit smb-speed-on-mac.sh to your configuration preferences with your favorite code editor and save
+finally run the script as super user
+```bash
+sudo ./smb-speed-on-mac.sh
+```
+if script show a permussion erro
+```bash
+sudo chown 755 smb-speed-on-mac.sh
+```
 
 ## Explanations on the various modifications that this script can make
 
@@ -90,4 +108,11 @@ echo "mc_prefer_wired=yes" >> /etc/nsmb.conf
 # Prevent creation of .DS_Store files on network shares (neutral, improves performance)
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 ```
-- Prevents creation of `.DS_Store` files on network shares, which can improve performance by reducing unnecessary network traffic.
+
+# How to remove ...
+```bash
+sudo rm -rm /etc/nsmb.conf
+```
+```bash
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool FALSE
+```
