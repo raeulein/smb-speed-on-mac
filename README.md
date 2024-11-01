@@ -3,7 +3,7 @@ a script that decrease samba protocol security to increase transfer speed
 
 This document explains each line of the provided shell script and its impact on system configuration, particularly in the context of SMB (Server Message Block) settings on macOS.
 
-- Comment indicating that the following commands reduce security.
+## Explanations on the various modifications that this script can make
 
 ```bash
 # Check if the nsmb.conf file exists and remove it if it does
