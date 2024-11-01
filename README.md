@@ -7,8 +7,8 @@ This document explains each line of the provided shell script and its impact on 
 
 ```bash
 # Check if the nsmb.conf file exists and remove it if it does
-if [ -f /private/etc/nsmb.conf ]; then
-    rm /private/etc/nsmb.conf
+if [ -f /etc/nsmb.conf ]; then
+    rm /etc/nsmb.conf
 fi
 ```
 - Checks if the `/private/etc/nsmb.conf` file exists, and if so, removes it. This clears any existing SMB configuration, allowing the script to start fresh.
