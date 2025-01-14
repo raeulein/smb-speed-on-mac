@@ -7,6 +7,11 @@ if [ -f /private/etc/nsmb.conf ]; then
     rm /private/etc/nsmb.conf
 fi
 
+# Check if the nsmb.conf file exists and remove it if it does
+if [ -f /etc/nsmb.conf ]; then
+    rm /etc/nsmb.conf
+fi
+
 # Create a new nsmb.conf file with default section
 echo "[default]" >> /etc/nsmb.conf
 
