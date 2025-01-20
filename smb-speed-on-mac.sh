@@ -53,10 +53,5 @@ echo "protocol_vers_map=4" >> /etc/nsmb.conf
 echo "mc_on=yes" >> /etc/nsmb.conf
 echo "mc_prefer_wired=yes" >> /etc/nsmb.conf
 
-# Prevent creation of .DS_Store files on network shares (neutral, improves performance)
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
-
-# End Section
-
 # Exit script
 exit
